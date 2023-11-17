@@ -1,20 +1,21 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
 // Определение схемы темы
-interface Topic extends Document {
+export interface Topic extends Document {
     name: string;
     route: string;
     data: string;
 }
 
 // Определение схемы темы с неопределенными темами
-interface Theme extends Document {
+export interface Theme extends Document {
     name: string;
+    route: string; // Добавлено свойство route
     topics: Topic[];
 }
 
 // Определение основной схемы карточки
-interface Card extends Document {
+export interface Card extends Document {
     title: string;
     icon: string;
     description: string;
@@ -23,12 +24,12 @@ interface Card extends Document {
 }
 
 // Определение основной схемы данных
-interface Data extends Document {
+export interface Data extends Document {
     cards: Card[];
 }
 
 // Определение схемы документа MongoDB
-interface DataDocument extends Document, Data {}
+export interface DataDocument extends Document, Data {}
 
 // Определение схемы для темы
 const TopicSchema = new Schema<Topic>({
