@@ -5,5 +5,6 @@ const dataRouter = Router();
 
 dataRouter.get('/get-data', DataController.getData);
 dataRouter.put('/update-data', DataController.updateData);
+dataRouter.get('/search', DataController.searchData);
 
 export default dataRouter;
